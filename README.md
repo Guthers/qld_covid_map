@@ -1,4 +1,4 @@
-# qld_covid_map
+# QLD Covid Map
 
 A new Flutter project.
 ## Getting Started

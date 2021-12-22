@@ -53,3 +53,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Ignore file from example page
+contact_tracing_page_example.html
+contact_tracing_page_example_files/
