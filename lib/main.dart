@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:qld_covid_map/qld_covid_map.dart';
 
-void main() => runApp(const MyApp());
+// ignore: constant_identifier_names
+const String BUILD_VERSION = "0.0.1";
+
+void main() async {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

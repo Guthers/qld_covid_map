@@ -32,8 +32,8 @@ class Exposure {
       : dateAdded = dateAddedFormat.parseStrict(json["data-added"]!),
         address = Uri.decodeFull(json["data-address"]!),
         type = json["data-advice"]! == "Casual"
-            ? ExposureType.Casual
-            : (json["data-advice"]! == "Close" ? ExposureType.Close : ExposureType.SelfIsolate),
+            ? ExposureType.casual
+            : (json["data-advice"]! == "Close" ? ExposureType.close : ExposureType.selfIsolate),
         date = dateAddedFormat.parseStrict(json["data-date"]!),
         time = Uri.decodeFull(json["data-timetext"]!),
         suburb = Uri.decodeFull(json["data-suburb"]!),
@@ -41,4 +41,4 @@ class Exposure {
         lga = Uri.decodeFull(json["data-lgas"]!);
 }
 
-enum ExposureType { Casual, Close, SelfIsolate }
+enum ExposureType { casual, close, selfIsolate }
