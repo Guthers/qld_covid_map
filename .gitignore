@@ -57,3 +57,6 @@ app.*.map.json
 # Ignore file from example page
 contact_tracing_page_example.html
 contact_tracing_page_example_files/
+
+.firebase/**
+.firebaserc
