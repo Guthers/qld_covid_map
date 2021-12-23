@@ -28,6 +28,11 @@ class Exposure {
   // "data-lgas": "QLD21",
   final String lga;
 
+  final double? lng;
+  final double? lat;
+
+  bool get hasGeoData => lng != null && lat != null;
+
   Exposure.fromJSON(Map<String, dynamic> json)
       : dateAdded = dateAddedFormat.parseStrict(json["data-added"]!),
         address = Uri.decodeFull(json["data-address"]!),
@@ -38,7 +43,9 @@ class Exposure {
         time = Uri.decodeFull(json["data-timetext"]!),
         suburb = Uri.decodeFull(json["data-suburb"]!),
         place = Uri.decodeFull(json["data-location"]!),
-        lga = Uri.decodeFull(json["data-lgas"]!);
+        lga = Uri.decodeFull(json["data-lgas"]!),
+        lng = json.containsKey("data-lng") ? json["data-lng"] : null,
+        lat = json.containsKey("data-lat") ? json["data-lat"] : null;
 }
 
 enum ExposureType { casual, close, selfIsolate }

@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 publish_to: 'none'
 
-version: 0.0.1+1
+version: 0.0.2+2
 
 environment:
   sdk: ">=2.15.0 <3.0.0"
@@ -12,6 +12,7 @@ dependencies:
   # Visual dependencies
   # For making the main exposures table
   syncfusion_flutter_datagrid: ^19.4.38
+  syncfusion_flutter_maps: 19.4.38-beta
 
   # Opening the url for the link
   url_launcher: ^6.0.17

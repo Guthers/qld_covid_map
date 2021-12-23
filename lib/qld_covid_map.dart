@@ -3,6 +3,9 @@ import 'package:qld_covid_map/exposure_loader.dart';
 import 'package:qld_covid_map/main.dart';
 import 'package:qld_covid_map/models/exposure.dart';
 import 'package:qld_covid_map/widgets/exposure_list.dart';
+import 'package:qld_covid_map/widgets/exposure_map.dart';
+import 'package:qld_covid_map/widgets/widget_tab_bar.dart';
+import 'package:syncfusion_flutter_maps/maps.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class QLDCovidMap extends StatefulWidget {
@@ -46,7 +49,13 @@ class _QLDCovidMapState extends State<QLDCovidMap> {
                   if (snapshot.hasError) {
                     return const Text('Error');
                   } else if (snapshot.hasData && (snapshot.data != null)) {
-                    return Expanded(child: ExposureList(ExposureDataSource(exposures: snapshot.data ?? [])));
+                    return Expanded(
+                        child: WidgetTabBar([
+                      WidgetTabBarItem(
+                          "List", Icons.list, ExposureList(ExposureDataSource(exposures: snapshot.data ?? []))),
+                      WidgetTabBarItem(
+                          "Map", Icons.map, ExposureMap((snapshot.data ?? []).where((e) => e.hasGeoData).toList()))
+                    ]));
                   } else {
                     return const Text('Empty data');
                   }

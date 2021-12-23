@@ -4,7 +4,7 @@ import 'package:qld_covid_map/models/exposure.dart';
 import 'package:http/http.dart' as http;
 
 class ExposureLoader {
-  static String get url => "https://australia-southeast1-qld-covid-map.cloudfunctions.net/scraper";
+  static String get url => "https://australia-southeast1-qld-covid-map.cloudfunctions.net/scraper-1";
 
   static Future<List<Exposure>> load() async {
     http.Response response = await http.get(Uri.parse(url));
