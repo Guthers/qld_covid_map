@@ -16,7 +16,7 @@ class ExposureMap extends StatelessWidget {
     return SfMaps(
       layers: [
         MapTileLayer(
-          urlTemplate: 'http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+          urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
           initialLatLngBounds: const MapLatLngBounds(
             MapLatLng(-28, 151),
             MapLatLng(-26, 154),

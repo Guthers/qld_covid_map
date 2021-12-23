@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qld_covid_map/qld_covid_map.dart';
 
 // ignore: constant_identifier_names
-const String BUILD_VERSION = "0.0.1";
+const String BUILD_VERSION = "0.0.2";
 
 void main() async {
   runApp(const MyApp());
